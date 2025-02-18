@@ -1,0 +1,13 @@
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover,
+  .nav-link:focus,
+  .nav-link:active,
+  .nav-link.active {
+    outline: 1px solid white;
+    border-radius: 5px;
+  }
+  

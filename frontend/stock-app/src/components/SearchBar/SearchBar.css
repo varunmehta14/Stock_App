@@ -1,0 +1,113 @@
+.input-group {
+  display: flex;
+  align-items: center;
+  border-color: #1d259a; 
+}
+
+.btn {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0; 
+}
+
+.btn:focus {
+  outline: none; 
+}
+
+.btn-outline-secondary {
+  color: #1d259a;
+  background-color: transparent;
+  background-image: none;
+  border-color: #1d259a;
+}
+
+.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #1d259a;
+  border-color: #1d259a;
+}
+
+.btn-outline-secondary:focus {
+  box-shadow: none;
+}
+
+.btn-outline-secondary:active {
+  color: #fff;
+  background-color: #1d259a;
+  border-color: #1d259a;
+}
+
+.MuiAutocomplete-root {
+  width: 90%;
+  max-width: 500px;
+}
+
+.MuiFormControl-root {
+  width: 100%;
+  border-radius: 0; 
+}
+
+.MuiInputBase-root {
+  border-radius: 0; 
+  border-color: #1d259a; 
+  color: #1d259a; 
+}
+
+.MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input {
+  padding-top: 10px; 
+  padding-bottom: 10px;
+  border-color: #1d259a;
+}
+
+.MuiAutocomplete-paper {
+  max-height: 300px; /* Adjust this value as needed */
+  overflow-y: auto; /* Enable vertical scrolling if the suggestions exceed the max height */
+  max-width: 80%;
+}
+
+.MuiAutocomplete-option:hover {
+  background-color: #f5f5f5; 
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-input-container {
+  position: relative;
+}
+
+.autocomplete-input {
+  border: 2px solid #1d259a; /* Blue border color */
+  padding-right: 60px; /* Adjust based on icon size */
+}
+
+.search-icons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px; /* Adjust based on the input container's padding */
+}
+
+.custom-button{
+  border: none;
+  background-color: white;
+  color: blue;
+
+
+}
+input[type="text"]:focus{
+  box-shadow: 0 0 0 rgb(255, 255, 255);
+}
+input:focus, input.form-control {
+
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  transition: none !important;
+}
