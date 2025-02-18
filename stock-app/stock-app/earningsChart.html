@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earnings Chart</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+</head>
+<body>
+    <div id="earningsChartContainer" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var chartData = {chartData}; // Replace {chartData} with actual JSON data
+            Highcharts.chart('earningsChartContainer', {
+                chart: {
+                    type: 'spline'
+                },
+                title: {
+                    text: 'Historical EPS Surprises'
+                },
+                xAxis: {
+                    type: 'category',
+                    labels: {
+                        useHTML: true,
+                        formatter: function() {
+                            const labelParts = this.value.split(' ');
+                            return `<div style="text-align: center;">${labelParts[0]}<br/><span >Surprise:</span> ${labelParts[1]}</div>`;
+                        }
+                    }
+                },
+                yAxis: {
+                    title: {
+                        text: 'Quarterly EPS'
+                    }
+                },
+                tooltip: {
+                    pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+                    valueSuffix: ' ',
+                    shared: true
+                },
+                plotOptions: {
+                    series: {
+                        label: {
+                            connectorAllowed: false
+                        },
+                        marker: {
+                            enabled: true,
+                            symbol: 'circle',
+                            radius: 3
+                        }
+                    }
+                },
+                series: chartData.series,
+                credits: {
+                    enabled: false
+                },
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            });
+        });
+    </script>
+</body>
+</html>

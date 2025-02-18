@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations Chart</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+</head>
+<body>
+    <div id="recommendationsChartContainer" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var chartData = {chartData}; // Replace {chartData} with actual JSON data
+            Highcharts.chart('recommendationsChartContainer', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Recommendation Trends'
+                },
+                xAxis: {
+                    categories: chartData.categories
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: '# Analysts'
+                    }
+                },
+                legend: {
+                    align: 'center',
+                    verticalAlign: 'bottom',
+                    layout: 'horizontal'
+                },
+                tooltip: {
+                    headerFormat: '<b>{point.x}</b><br/>',
+                    pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal',
+                        dataLabels: {
+                            enabled: true
+                        }
+                    }
+                },
+                series: chartData.series
+            });
+        });
+    </script>
+</body>
+</html>
